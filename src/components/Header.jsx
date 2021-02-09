@@ -31,7 +31,7 @@ const Header = () => {
         <Link className="link__decoration" to={!user && "/login"}>
           <div onClick={handleAuth} className="header__option">
             <span className="header__opetionLineOne">
-              {!user ? "Hello Guest" : user.email}
+              Hello {!user ? "Guest" : user.email}
             </span>
             <span className="header__optionLineTwo">
               {user ? "Sign Out" : "SIgn In"}
