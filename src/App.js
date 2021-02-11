@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import Header from "./components/Header";
 import Home from "./components/Home";
 import Login from "./components/Login";
+import Orders from "./components/Orders";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Checkout from "./components/Checkout";
 import { auth } from "./firebase";
@@ -49,6 +50,9 @@ function App() {
         <Switch>
           <Route path="/login">
             <Login />
+          </Route>
+          <Route path="/orders">
+            <Orders />
           </Route>
           <Route path="/checkout">
             <Header />
