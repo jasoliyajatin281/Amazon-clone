@@ -135,16 +135,16 @@ function Payment() {
 
                 {/* Only allows to click ones after disable button  */}
                 <button disabled={processing || disabled || succeeded}>
-                  <span>{processing ? <p>Processing</p> : "Buy Now"}</span>
+                  <span>{processing ? <p>Processing...</p> : "Buy Now"}</span>
                 </button>
+                <div className="payment__cardInfo">
+                  *Please use the following test credit card for payments*
+                  <br />
+                  4242 4242 4242 4242 - Exp: 4/24 - CVV: 242 ZIP: 42424
+                </div>
               </div>
               {/* Errors */}
               {error && <div>{error}</div>}
-              <div className="payment__cardInfo">
-                *Please use the following test credit card for payments*
-                <br />
-                4242 4242 4242 4242 - Exp: 4/24 - CVV: 242 ZIP: 42424
-              </div>
             </form>
           </div>
         </div>

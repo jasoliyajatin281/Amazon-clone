@@ -29,7 +29,11 @@
     flex: 0.8;
 }
 .payment__priceContainer{
-  margin-top: 10px;
+  margin-top: 20px;
+  padding: 15px; 
+  width: 100%;
+  border: 2px solid lightgrey;
+  
 }
 .payment__details > form {
     max-width: 400px;
