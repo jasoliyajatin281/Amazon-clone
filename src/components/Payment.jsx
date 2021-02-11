@@ -7,6 +7,7 @@ import { getBasketTotal } from "../context/reducer";
 import axios from "../context/axios";
 import "./Payment.css";
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
+import { db } from "../firebase";
 
 function Payment() {
   const history = useHistory();
@@ -51,6 +52,17 @@ function Payment() {
       })
       .then(({ paymentIntent }) => {
         // paymentIntent = payment confirmation
+
+        // Push the order in firestore
+        db.collection("users")
+          .doc(user?.uid)
+          .collection("orders")
+          .doc(paymentIntent.id)
+          .set({
+            basket: basket,
+            amount: paymentIntent.amount,
+            created: paymentIntent.created,
+          });
 
         setSucceeded(true);
         setError(null);
@@ -126,9 +138,13 @@ function Payment() {
                   <span>{processing ? <p>Processing</p> : "Buy Now"}</span>
                 </button>
               </div>
-
               {/* Errors */}
               {error && <div>{error}</div>}
+              <div className="payment__cardInfo">
+                *Please use the following test credit card for payments*
+                <br />
+                4242 4242 4242 4242 - Exp: 4/24 - CVV: 242 ZIP: 42424
+              </div>
             </form>
           </div>
         </div>

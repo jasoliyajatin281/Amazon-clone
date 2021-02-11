@@ -28,13 +28,16 @@
 .payment__address, .payment__items, .payment__details {
     flex: 0.8;
 }
-  
+.payment__priceContainer{
+  margin-top: 10px;
+}
 .payment__details > form {
     max-width: 400px;
   }
 
   .payment__details > h3 {
     padding-bottom: 20px;
+    padding-top: 10px;
   }
 
 
@@ -48,4 +51,11 @@
     margin-top: 10px;
     border-color: #a88734 #9c7e31 #846a29;
     color: #111;
+  }
+
+  .payment__cardInfo{
+  text-align: center;
+  margin-top: 25px;
+  font-size: 15px;
+  color: red;
   }

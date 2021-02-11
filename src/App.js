@@ -18,6 +18,7 @@ const promise = loadStripe(
 );
 
 function App() {
+  // eslint-disable-next-line no-empty-pattern
   const [{}, dispatch] = useStateValue();
 
   // Listerner to keep track who signed In
@@ -42,6 +43,7 @@ function App() {
         });
       }
     });
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -52,6 +54,7 @@ function App() {
             <Login />
           </Route>
           <Route path="/orders">
+            <Header />
             <Orders />
           </Route>
           <Route path="/checkout">
