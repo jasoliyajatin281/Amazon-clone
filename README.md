@@ -1,4 +1,4 @@
-# Netflix Clone
+# Amazon Clone
 
 A Amazon-Clone website built using React. In this web app Sign-In, Sign-out (User authenication by using firebase), Add/Remove products from carts and fully payments processing by using firebase cloud functionality for backend and Stored orders and fetch orders from firebase
 
